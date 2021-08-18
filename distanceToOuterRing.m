@@ -29,12 +29,12 @@ for i = 1:nDies
     % if the die is the same as origin
     if x2Theta == 0 && x2Rho == 0
         % assign the largest rho value
-        result(i) = max(sortedWaferMapEndDieData(:,4));   
+        result(i) = 0;   
         continue;
     end
     
     % check whether the same as one of end die theta value
-    idx = ismember(x2Theta,sortedWaferMapEndDieData(:,3));    
+    idx = (x2Theta == sortedWaferMapEndDieData(:,3));    
     
     if sum(idx) == 1
         result(i) = max(sortedWaferMapEndDieData(idx,4));
